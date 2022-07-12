@@ -27,7 +27,16 @@ pyb
 # reports/pybuilder_try_coverage ，可以看到 coverage rate
 
 # 接著，把 main.py 寫在 src/scripts 裡面 (好習慣，把會用到的 module, package 寫在 main, 把要執行的 main 寫在 scripts)
+# pyb 後，之後 user 只要安裝好你的 package，那 main.py 就會被放到對方 python environment 的 bin 裡面
+# 所以在 command line 直接打 main.py，他就會幫你執行這個主程式
 
 # 待補充： 如果要放 testing 用的 data, 要放哪？ 如果要 import 第三方 package，要怎用？
 
+# 為啥學 pybuilder 就好，是因為一般在做 ci 時，你要在 jenkins 上用 script 來一條一條處理 python 的環境問題
+# 例如要安裝啥 python, 哪些 package, 然後執行 setup.py 去包成 package，做 unittest, 算 coverage rate 等
+# 但如果用 pybuilder，他直接都幫你包好了，所以 jenkins 要做的，就是灌 pybuilder，然後執行 pyb，就收工
 
+
+
+https://dev.to/awwsmm/managing-your-python-project-with-git-and-pybuilder-21if
+https://stackoverflow.com/questions/59845311/how-to-include-datasets-in-packages-generated-by-pybuilder-and-make-them-availab
