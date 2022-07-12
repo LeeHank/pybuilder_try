@@ -1,8 +1,9 @@
-import matplotlib.pyplot as plt
-
-
 def say_hi():
     print("Hi, there!")
+    return("Hi, there!")
+
+# import matplotlib.pyplot as plt
+
 # class ImgProcessor:
 #     def __init__(self, width, height):
 #         self.width = width

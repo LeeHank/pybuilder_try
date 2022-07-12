@@ -1,0 +1,33 @@
+# in terminal
+git init
+python -m venv "pybuilder_env"
+source pybuilder_env/bin/activate
+pip install pybuilder_env
+pyb --start-project
+
+pip install matplotlib
+pip install opencv-python
+python -m pip freeze > requirements.txt
+pip install -r requirements.txt
+
+# 一路enter到底
+
+# 在 src/main/python/ 下，新增一個資料夾，叫 iqutils 好了
+mkdir src/python/iqutils
+# 新增 __init__.py 文件, 新增 data_preprocess.py
+# 在 data_preprocess.py 裡面，寫個 say_hi 的 function
+# run pyb 看看結果如何
+pyb
+
+# 會發現他告訴你 BUILD FAILED，因為 test coverage < 70% (其實根本還沒寫 unittest)
+# 新增 unittest 後，就可以 BUILD SUCCESSFUL 了
+# 來看 target 資料夾
+# dist 就是要發布的套件
+# reports/unittest，可以看到 unittest 的 log
+# reports/pybuilder_try_coverage ，可以看到 coverage rate
+
+# 接著，把 main.py 寫在 src/scripts 裡面 (好習慣，把會用到的 module, package 寫在 main, 把要執行的 main 寫在 scripts)
+
+# 待補充： 如果要放 testing 用的 data, 要放哪？ 如果要 import 第三方 package，要怎用？
+
+
